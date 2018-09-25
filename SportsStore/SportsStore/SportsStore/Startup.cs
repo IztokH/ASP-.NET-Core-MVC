@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SportsStore.Models;
-using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace SportsStore
@@ -29,7 +28,11 @@ namespace SportsStore
         {
 			services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:SportStoreProducts:ConnectionString"]));
 			services.AddTransient<IProductRepository, EFProductRepository>();
-			services.AddMvc();			
+			services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+			services.AddMvc();
+			services.AddMemoryCache();
+			services.AddSession();
 		}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +49,7 @@ namespace SportsStore
             }
 
             app.UseStaticFiles();
+			app.UseSession();
 
 			app.UseMvc(routes => {
 
