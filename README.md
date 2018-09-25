@@ -4,7 +4,7 @@ Instructions: a) upload files, b) with Visual Studio, open file PartyInvites.sln
 Author: Iztok Hudales.
 Acknowledgments: Freeman A., Pro ASP.NET Core MVC Sixth Edition, 2016.
 
-SportsStore: design enhanced ASP .NET Core 2.0 MVC application for displaying lists of products, add products to the cart, after adding items to the cart, then the number of items and their combined cost are shown, view content of cart and removal of products from the cart.
+SportsStore: design enhanced ASP .NET Core 2.0 MVC application for displaying lists of products, add items to the cart, after that, the number of items and their combined cost are shown, view content of cart and removing items from the cart.
 Prerequisites: Visual Studio 2017.
 Instructions: a) upload files, b) with Visual Studio, open file SportsStore.sln, c) click Run or press F5.
 Author: Iztok Hudales.
