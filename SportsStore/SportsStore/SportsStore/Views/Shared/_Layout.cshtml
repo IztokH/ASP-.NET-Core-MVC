@@ -20,10 +20,7 @@
 <body>
 	<div class="row panel">
 		<div id="categories" class="col-xs-3">
-			@await Component.InvokeAsync("NavigationMenu")
-			<div class="pull-right">
-				@await Component.InvokeAsync("CartSummary")
-			</div>
+			@await Component.InvokeAsync("NavigationMenu")			
 		</div>
 		<div class="col-xs-8">
 			@RenderBody()
@@ -46,7 +43,10 @@
 					<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
 					<li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
 				</ul>
-			</div>
+				<div class="pull-right">
+					@await Component.InvokeAsync("CartSummary")
+				</div>
+			</div>		
 		</div>
 	</nav>
 	<div class="container body-content">
