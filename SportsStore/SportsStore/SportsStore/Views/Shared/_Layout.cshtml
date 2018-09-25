@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
 	<title>SportsStore</title>
 
 	<environment include="Development">
@@ -20,6 +21,9 @@
 	<div class="row panel">
 		<div id="categories" class="col-xs-3">
 			@await Component.InvokeAsync("NavigationMenu")
+			<div class="pull-right">
+				@await Component.InvokeAsync("CartSummary")
+			</div>
 		</div>
 		<div class="col-xs-8">
 			@RenderBody()
